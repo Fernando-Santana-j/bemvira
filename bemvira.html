@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bemvirá - Joias em Prata 925</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dmfgy0ccd/image/upload/v1755168227/CasinhaBemvira%CC%81-removebg-preview_kz35ya.png" type="image/png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-purple: #762a85;
+            --secondary-purple: #9854a3;
+            --dark-purple: #5d1f69;
+            --light-purple: #e8d5ec;
+            --soft-white: #fafafa;
+            --cream-white: #f8f8f8;
+            --light-gray: #f5f5f5;
+            --dark-text: #2d2d2d;
+            --medium-gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(118, 42, 133, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-purple);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--primary-purple);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: url('https://res.cloudinary.com/dmfgy0ccd/image/upload/v1755268856/Bemvir%C3%A1_Joias_para_usar_todos_os_dias_gnji0x.png') no-repeat center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero-text {
+            color: var(--dark-text);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.5);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 0 60px rgba(118, 42, 133, 0.2),
+                inset 0 0 30px rgba(118, 42, 133, 0.1);
+            animation: pulseGlow 3s ease-in-out infinite;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(118, 42, 133, 0.1);
+        }
+
+        .hero-image-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(
+                circle at center,
+                rgba(232, 213, 236, 0.8) 0%,
+                rgba(152, 84, 163, 0.2) 50%,
+                transparent 70%
+            );
+            animation: rotate 15s linear infinite;
+        }
+
+        .hero-logo {
+            max-width: 80%;
+            height: auto;
+            z-index: 2; 
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: var(--soft-white);
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-purple);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(118, 42, 133, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(118, 42, 133, 0.1);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(118, 42, 133, 0.2);
+        }
+
+        .value-card h3 {
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .products-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--soft-white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(118, 42, 133, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(118, 42, 133, 0.2);
+        }
+
+        .product-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--light-purple), var(--cream-white));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--secondary-purple);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+            50% { transform: translate(-30%, -30%) scale(1.2); opacity: 1; }
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            color: var(--dark-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            color: var(--primary-purple);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section {
+            padding: 0 1rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 30px;
+            height: 2px;
+            background: var(--secondary-purple);
+        }
+
+        .footer-section p, 
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            display: block;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Update responsive styles for footer */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 3rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .footer-section {
+                padding: 0;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            @keyframes reverseRotate {
+                from { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+                to { transform: rotate(-360deg) translateX(120px) rotate(360deg); }
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo"><img src="" alt=""> Bemvirá</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 style="font-weight: bold;">Bemvirá</h1>
+                <p>A <b>Bemvirá</b> é mais que uma marca — é a união de três irmãos, Bergson, Victoria e Maria, que criaram uma marca com <b>essência, propósito e significado</b> em tudo o que fazemos.</p>
+                <p>Especializada em pratas 925, oferecemos peças que unem design sofisticado, qualidade refinada e um toque de inovação.</p>
+                <p>Cada detalhe carrega nossa essência: harmonia familiar, cuidado com cada escolha e curadoria exclusiva para quem valoriza beleza, elegância e propósito.</p>
+                <p>💜 Bem-estar, bem-viver, <b>Bemvirá</b>.</p>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-container">
+                    <div class="hero-image-glow"></div>
+                    <img 
+                        src="https://res.cloudinary.com/dmfgy0ccd/image/upload/v1755268921/image-removebg-preview_1_tdv7d4.png" 
+                        alt="Bemvirá Joias"
+                        class="hero-logo"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="about">
+        <div class="about-content">
+            <h2 class="section-title fade-in">Nossa História</h2>
+            <div class="about-text fade-in">
+                <p>A Bemvirá é mais que uma marca — é a união de três irmãos, Bergson, Victoria e Maria, que criaram uma marca com <b>essência, propósito e significado</b> em tudo o que fazemos. Nosso nome carrega a essência dessa união, representando afeto, propósito e o desejo de levar sofisticação e acolhimento a cada cliente.</p>
+                
+                <p>Especializada em pratas 925, oferecemos uma curadoria exclusiva de peças que combinam design sofisticado, qualidade refinada e um toque de inovação. Cada detalhe é pensado com carinho, desde a escolha dos materiais até a experiência de quem recebe nossos produtos, para que cada momento seja especial.</p>
+                
+                <p>Nossa missão é elevar a rotina com simplicidade e requinte, trazendo produtos que unem beleza e funcionalidade. Nossa visão é sermos reconhecidos como referência no segmento premium de pratas, entregando excelência, estilo e propósito.</p>
+                
+                <p>Na Bemvirá, acreditamos que cada joia é mais do que um acessório — é um símbolo de histórias, emoções e estilo.</p>
+                
+                <p>💜 Bem-estar, bem-viver, Bemvirá.</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <h3>Harmonia Familiar</h3>
+                    <p>A essência dos três irmãos em cada detalhe.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <h3>Qualidade Refinada</h3>
+                    <p>Cuidado e exigência na escolha de cada peça.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <h3>Elegância Funcional</h3>
+                    <p>Beleza e praticidade sempre de mãos dadas.</p>
+                </div>
+                <div class="value-card fade-in">
+                    <h3>Inovação com Significado</h3>
+                    <p>Produtos que transformam a rotina em prazer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos" class="products">
+        <div class="products-content">
+            <h2 class="section-title fade-in">Nossas Peças</h2>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">💍</div>
+                    <div class="product-info">
+                        <h3>Anel Elegance</h3>
+                        <div class="product-price">R$ 189,90</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Anel Elegance', 'R$ 189,90', '💍')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">📿</div>
+                    <div class="product-info">
+                        <h3>Colar Harmony</h3>
+                        <div class="product-price">R$ 249,90</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Colar Harmony', 'R$ 249,90', '📿')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">💎</div>
+                    <div class="product-info">
+                        <h3>Brincos Sparkle</h3>
+                        <div class="product-price">R$ 159,90</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Brincos Sparkle', 'R$ 159,90', '💎')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">⭐</div>
+                    <div class="product-info">
+                        <h3>Pulseira Stellar</h3>
+                        <div class="product-price">R$ 199,90</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Pulseira Stellar', 'R$ 199,90', '⭐')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">🔮</div>
+                    <div class="product-info">
+                        <h3>Pingente Mystic</h3>
+                        <div class="product-price">R$ 129,90</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Pingente Mystic', 'R$ 129,90', '🔮')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image">✨</div>
+                    <div class="product-info">
+                        <h3>Conjunto Luxe</h3>
+                        <div class="product-price">R$ 399,90</div>
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Conjunto Luxe', 'R$ 399,90', '✨')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>📱 +55 79 9849-4303</p>
+                <p>📧 contato@bemvira.com.br</p>
+                <p>📍 Sergipe, Brasil</p>
+            </div>
+            <div class="footer-section">
+                <h3>Siga-nos</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Informações</h3>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Trocas e Devoluções</a>
+                <a href="#">Entrega</a>
+            </div>
+            <div class="footer-section">
+                <h3>Bemvirá</h3>
+                <p>Bem-estar, bem-viver, Bemvirá.</p>
+                <p>💜 Joias em prata 925 com design sofisticado e qualidade refinada.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bemvirá. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Função para enviar mensagem no WhatsApp
+        function sendToWhatsApp(productName, price, emoji) {
+            const phoneNumber = "5579998494303"; // Número sem o +
+            const message = `Olá! Tenho interesse na peça: ${emoji} ${productName} - ${price}. Poderia me dar mais informações?`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Animações de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos fade-in
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll suave para links do menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.offsetTop;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 30px rgba(118, 42, 133, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(118, 42, 133, 0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
