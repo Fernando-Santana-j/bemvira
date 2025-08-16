@@ -763,6 +763,12 @@
       margin-top: 6em;
   }
 }
+.footer-itens{
+    display: flex !important;
+    align-items: center !important;
+    /* justify-content: center !important; */
+    gap: 1em;
+}
     </style>
 </head>
 <body>
@@ -1039,17 +1045,17 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contato</h3>
-                <p>📱 +55 79 9849-4303</p>
-                <p>📧 contato@bemvira.com.br</p>
-                <p>📍 Sergipe, Brasil</p>
+                <p class="footer-itens"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> +55 79 9849-4303</p>
+                <p class="footer-itens"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>  sac.bemvira@gmail.com</p>
+                <p class="footer-itens"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pinned-icon lucide-map-pinned"><path d="M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0"/><circle cx="12" cy="8" r="2"/><path d="M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712"/></svg> Sergipe, Brasil</p>
             </div>
             <div class="footer-section">
                 <h3>Siga-nos</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a target="_blank" href="https://www.instagram.com/bem.vira"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" href="#"><i class="fab fa-facebook"></i></a>
+                    <a onclick="sendToWhatsApp(null,null,null,`Olá! Tenho interesse nas peças. Poderia me dar mais informações?`)" href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a target="_blank" href="#"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
             <div class="footer-section">
