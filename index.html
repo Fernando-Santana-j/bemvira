@@ -139,11 +139,13 @@
             margin-bottom: 1rem;
             font-weight: 300;
             line-height: 1.2;
+            text-align: center;
         }
 
         .hero-text p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
+            text-align: center;
             opacity: 0.95;
             line-height: 1.8;
         }
@@ -535,7 +537,7 @@
             width: 2em;
             padding-bottom: 0.5em;
         }
-        #cuidados {
+        #cuidados{
   padding: 56px 16px;
   background: linear-gradient(180deg, rgba(242,238,246,0.6), rgba(255,255,255,0));
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -546,6 +548,7 @@
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
+  align-items: center;
   grid-template-columns: 1fr 360px;
   gap: 28px;
   align-items: center;
@@ -651,7 +654,83 @@
   background:linear-gradient(90deg,#7a3290,#5e2a7a);
   color:#fff;
   font-weight:600;
+  text-align: center;
   font-size:13px;
+}
+
+/* Limpeza específica */
+.limpeza-card{
+  background: linear-gradient(180deg,#fff,#fbf8ff);
+  border-radius:12px;
+  padding:18px;
+  border-left:4px solid rgba(118,42,133,0.12);
+  box-shadow: 0 12px 26px rgba(118,42,133,0.04);
+  margin-top:16px;
+}
+
+.limpeza-standalone-wrapper{
+  max-width:1100px;
+  margin:30px auto 0;
+  padding:0 16px;
+}
+
+.limpeza-card.limpeza-standalone{ 
+  margin-top:22px;
+  padding:28px;
+  width: 100%;
+  border-radius:14px;
+  margin-left:0;
+  box-shadow: 0 24px 48px rgba(118,42,133,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.limpeza-card.limpeza-standalone:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(118,42,133,0.09);
+}
+
+
+.limpeza-card.limpeza-standalone{ 
+  margin-top:22px;
+  padding:22px;
+  width: 100%;
+  border-radius:14px;
+  margin-left:0;
+  box-shadow: 0 20px 40px rgba(118,42,133,0.06);
+}
+
+.limpeza-title{
+  font-size:18px;
+  color:var(--primary-purple);
+  font-weight:700;
+  margin-bottom:8px;
+}
+
+.limpeza-subtitle{
+  font-size:14px;
+  color:#444;
+  margin-bottom:12px;
+}
+
+.limpeza-steps{
+  list-style: decimal;
+  padding-left: 1.2rem;
+  color:#2f2f2f;
+  margin-bottom:12px;
+}
+
+.limpeza-steps li{
+  margin-bottom:8px;
+  line-height:1.6;
+}
+
+.limpeza-note{
+  font-size:13px;
+  color:#616161;
+  background: linear-gradient(90deg, rgba(232,213,236,0.06), rgba(255,255,255,0.02));
+  padding:10px;
+  border-radius:8px;
+  border:1px solid rgba(118,42,133,0.03);
 }
 
 /* Responsivo */
@@ -691,6 +770,7 @@
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#cuidados">Cuidados</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -700,10 +780,8 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 style="font-weight: bold;">Bemvirá</h1>
-                <p>A <b>Bemvirá</b> é mais que uma marca — é a união de três irmãos, Bergson, Victoria e Maria, que criaram uma marca com <b>essência, propósito e significado</b> em tudo o que fazemos.</p>
-                <p>Especializada em pratas 925, oferecemos peças que unem design sofisticado, qualidade refinada e um toque de inovação.</p>
-                <p>Cada detalhe carrega nossa essência: harmonia familiar, cuidado com cada escolha e curadoria exclusiva para quem valoriza beleza, elegância e propósito.</p>
-                <p>💜 Bem-estar, bem-viver, <b>Bemvirá</b>.</p>
+                <p>Transformando cada história em algo único e especial. </p>
+                
             </div>
             <div class="hero-image">
                 <div class="hero-image-container">
@@ -713,6 +791,118 @@
                         alt="Bemvirá Joias"
                         class="hero-logo"
                     >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <section id="produtos" class="products">
+        <div class="products-content">
+            <h2 class="section-title fade-in">Nossas Peças</h2>
+            <div class="products-grid">
+                 <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Anéis</h3>
+                        <!-- <div class="product-price">R$ 189,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Anéis', 'R$ 189,90', '💍')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Alianças</h3>
+                        <!-- <div class="product-price">R$ 249,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Alianças', 'R$ 249,90', '💍')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Solitários</h3>
+                        <!-- <div class="product-price">R$ 159,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Solitários', 'R$ 159,90', '💍')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Colares</h3>
+                        <!-- <div class="product-price">R$ 199,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Colares', 'R$ 199,90', '📿')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Correntes</h3>
+                        <!-- <div class="product-price">R$ 129,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Correntes', 'R$ 129,90', '📿')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Brincos</h3>
+                        <!-- <div class="product-price">R$ 399,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Brincos', 'R$ 399,90', '💎')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Pulseiras</h3>
+                        <!-- <div class="product-price">R$ 399,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Pulseiras', 'R$ 399,90', '💎')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Braceletes</h3>
+                        <!-- <div class="product-price">R$ 399,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Braceletes', 'R$ 399,90', '💎')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <div class="product-image"></div>
+                    <div class="product-info">
+                        <h3>Pingentes</h3>
+                        <!-- <div class="product-price">R$ 399,90</div> -->
+                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Pingentes', 'R$ 399,90', '🔮')">
+                            <i class="fab fa-whatsapp"></i>
+                            Comprar no WhatsApp
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -740,150 +930,107 @@
                 </div>
                 <div class="value-card fade-in">
                     <h3>Qualidade Refinada</h3>
-                    <p>Cuidado e exigência na escolha de cada peça.</p>
+                    <p>Cuidado na escolha de cada peça.</p>
                 </div>
                 <div class="value-card fade-in">
                     <h3>Elegância Funcional</h3>
-                    <p>Beleza e praticidade sempre de mãos dadas.</p>
+                    <p>Estilo pensado para cada momento.</p>
                 </div>
                 <div class="value-card fade-in">
-                    <h3>Inovação com Significado</h3>
-                    <p>Produtos que transformam a rotina em prazer.</p>
+                    <h3>Significado Único</h3>
+                    <p>Cada joia carrega histórias, conquistas e emoções.</p>
                 </div>
             </div>
         </div>
     </section>
     <section id="cuidados" aria-labelledby="cuidados-title">
         <h2 class="section-title fade-in">Cuidados</h2>
-  <div class="cuidados-container">
-    <div class="cuidados-left">
-      <h2 id="cuidados-title" class="cuidados-title">Cuidados com suas Jóias</h2>
-      <p class="cuidados-intro"><strong>Vamos conferir alguns dos cuidados que devemos realizar com a joia Bemvirá:</strong></p>
+        <div class="cuidados-container">
+          <div class="cuidados-left">
+            <h2 id="cuidados-title" class="cuidados-title">Cuidados com suas Jóias</h2>
+            <p class="cuidados-intro"><strong>Vamos conferir alguns dos cuidados que devemos realizar com a joia Bemvirá:</strong></p>
 
-      <div class="cuidados-card" role="region" aria-label="Cuidados com joias">
-        <ul class="cuidados-list">
-          <li class="cuidados-item">
-            <div class="badge" aria-hidden="true">1</div>
-            <div>Joias podem ser danificadas por produtos químicos, sabonetes, golpes fortes ou fricção intensa. Evite usá-las em tarefas domésticas e retire os anéis ao lavar as mãos.</div>
-          </li>
+            <div class="cuidados-card" role="region" aria-label="Cuidados com joias">
+              <ul class="cuidados-list">
+                <li class="cuidados-item">
+                  <div class="badge" aria-hidden="true">1</div>
+                  <div>Joias podem ser danificadas por produtos químicos, sabonetes, golpes fortes ou fricção intensa. Evite usá-las em tarefas domésticas e retire os anéis ao lavar as mãos.</div>
+                </li>
 
-          <li class="cuidados-item">
-            <div class="badge" aria-hidden="true">2</div>
-            <div>Guarde as joias separadamente e tenha cuidado com o contato das joias com outros objetos quando as estiver usando.</div>
-          </li>
+                <li class="cuidados-item">
+                  <div class="badge" aria-hidden="true">2</div>
+                  <div>Guarde as joias separadamente e tenha cuidado com o contato das joias com outros objetos quando as estiver usando.</div>
+                </li>
 
-          <li class="cuidados-item">
-            <div class="badge" aria-hidden="true">3</div>
-            <div>Para limpar prata, com ou sem pedra, use uma flanela macia.</div>
-          </li>
-        </ul>
-      </div>
-    </div>
+                <li class="cuidados-item">
+                  <div class="badge" aria-hidden="true">3</div>
+                  <div>Evite contato prolongado com água do mar, produtos de limpeza e perfumes. Retire as peças antes de nadar ou aplicar cosméticos.</div>
+                </li>
 
-    <aside class="cuidados-visual" aria-hidden="true">
-      <div class="cuidados-visual-card">
-        <!-- Ilustração simples (SVG) -->
-        <svg class="cuidados-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de anel">
-          <defs>
-            <radialGradient id="rgrad" cx="30%" cy="25%">
-              <stop offset="0%" stop-color="#ffffff"/>
-              <stop offset="60%" stop-color="#f0e6f6"/>
-              <stop offset="100%" stop-color="#faf8fb"/>
-            </radialGradient>
-            <linearGradient id="sgrad" x1="0" x2="1">
-              <stop offset="0%" stop-color="#9b3fa0"/>
-              <stop offset="100%" stop-color="#6b2a7a"/>
-            </linearGradient>
-          </defs>
-          <circle cx="100" cy="100" r="68" fill="url(#rgrad)" stroke="url(#sgrad)" stroke-width="8"/>
-          <path d="M62 106c10-18 34-28 58-22" stroke="#d8b5e5" stroke-width="6" stroke-linecap="round" fill="none"/>
-          <circle cx="140" cy="72" r="10" fill="#fff" stroke="url(#sgrad)" stroke-width="4"/>
-        </svg>
+                <li class="cuidados-item">
+                  <div class="badge" aria-hidden="true">4</div>
+                  <div>Para limpar prata, com ou sem pedra, utilize uma flanela macia e produtos de limpeza com moderação.</div>
+                </li>
 
-        <p class="cuidados-note">Pequenos cuidados preservam o brilho e a história das suas peças.</p>
-        <span class="cuidados-tag">Prata 925 • Tratamento suave</span>
-      </div>
-    </aside>
-  </div>
-</section>
-    <section id="produtos" class="products">
-        <div class="products-content">
-            <h2 class="section-title fade-in">Nossas Peças</h2>
-            <div class="products-grid">
-                <div class="product-card fade-in">
-                    <div class="product-image">💍</div>
-                    <div class="product-info">
-                        <h3>Anel Elegance</h3>
-                        <div class="product-price">R$ 189,90</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Anel Elegance', 'R$ 189,90', '💍')">
-                            <i class="fab fa-whatsapp"></i>
-                            Comprar no WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-image">📿</div>
-                    <div class="product-info">
-                        <h3>Colar Harmony</h3>
-                        <div class="product-price">R$ 249,90</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Colar Harmony', 'R$ 249,90', '📿')">
-                            <i class="fab fa-whatsapp"></i>
-                            Comprar no WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-image">💎</div>
-                    <div class="product-info">
-                        <h3>Brincos Sparkle</h3>
-                        <div class="product-price">R$ 159,90</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Brincos Sparkle', 'R$ 159,90', '💎')">
-                            <i class="fab fa-whatsapp"></i>
-                            Comprar no WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-image">⭐</div>
-                    <div class="product-info">
-                        <h3>Pulseira Stellar</h3>
-                        <div class="product-price">R$ 199,90</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Pulseira Stellar', 'R$ 199,90', '⭐')">
-                            <i class="fab fa-whatsapp"></i>
-                            Comprar no WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-image">🔮</div>
-                    <div class="product-info">
-                        <h3>Pingente Mystic</h3>
-                        <div class="product-price">R$ 129,90</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Pingente Mystic', 'R$ 129,90', '🔮')">
-                            <i class="fab fa-whatsapp"></i>
-                            Comprar no WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="product-card fade-in">
-                    <div class="product-image">✨</div>
-                    <div class="product-info">
-                        <h3>Conjunto Luxe</h3>
-                        <div class="product-price">R$ 399,90</div>
-                        <a href="#" class="whatsapp-btn" onclick="sendToWhatsApp('Conjunto Luxe', 'R$ 399,90', '✨')">
-                            <i class="fab fa-whatsapp"></i>
-                            Comprar no WhatsApp
-                        </a>
-                    </div>
-                </div>
+                <li class="cuidados-item">
+                  <div class="badge" aria-hidden="true">5</div>
+                  <div>Inspecione suas joias periodicamente para verificar folgas em fechos, engastes soltos ou sinais de desgaste.</div>
+                </li>
+              </ul>
             </div>
+          </div>
+
+          <aside class="cuidados-visual" aria-hidden="true">
+            <div class="cuidados-visual-card">
+              <!-- Ilustração simples (SVG) -->
+              <svg class="cuidados-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustração de anel">
+                <defs>
+                  <radialGradient id="rgrad" cx="30%" cy="25%">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="60%" stop-color="#f0e6f6"/>
+                    <stop offset="100%" stop-color="#faf8fb"/>
+                  </radialGradient>
+                  <linearGradient id="sgrad" x1="0" x2="1">
+                    <stop offset="0" stop-color="#9b3fa0"/>
+                    <stop offset="100%" stop-color="#6b2a7a"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="68" fill="url(#rgrad)" stroke="url(#sgrad)" stroke-width="8"/>
+                <path d="M62 106c10-18 34-28 58-22" stroke="#d8b5e5" stroke-width="6" stroke-linecap="round" fill="none"/>
+                <circle cx="140" cy="72" r="10" fill="#fff" stroke="url(#sgrad)" stroke-width="4"/>
+              </svg>
+
+              <p class="cuidados-note">Cuidados que preservam o brilho e a história das suas joias.</p>
+              <span class="cuidados-tag">Prata 925</span>
+            </div>
+          </aside>
         </div>
-    </section>
+
+        <!-- Bloco de limpeza destacado e uniforme -->
+        <div class="limpeza-standalone-wrapper">
+          <div class="limpeza-card limpeza-standalone" role="region" aria-labelledby="limpeza-title-standalone">
+            <div id="limpeza-title-standalone" class="limpeza-title">COMO LIMPAR PRATA? APRENDA A LIMPAR SUAS JOIAS.</div>
+            
+            <p style="margin-bottom:8px; color:#505050;">A prata pode escurecer com o tempo devido à oxidação natural. Siga esse passo a passo simples para recuperar o brilho sem danificar o banho ou pedras:</p>
+
+            <ol class="limpeza-steps">
+              <li>Enxágue a joia com água corrente para remover sujeiras soltas.</li>
+              <li>Use uma flanela macia para secar e polir a sua joia. Seque bem para evitar a oxidação.</li>
+              <li>Se necessário, utilize limpa-prata com moderação — aplique uma pequena quantidade em um pano e passe delicadamente.</li>
+              <li>Evite deixar as peças imersas por longos períodos em soluções químicas ou uso excessivo de produtos polidores.</li>
+              <li>Se a joia tiver pedras, proceda com cuidado: evite molhar excessivamente pedras porosas e prefira limpeza localizada com flanela úmida.</li>
+            </ol>
+
+            <p class="limpeza-note"><strong>Observações:</strong> A Bemvirá não se responsabiliza pela execução inadequada da limpeza dos seus produtos. IMPORTANTE: os tipos de produtos, as quantidades de produtos usados e os períodos de imersão das joias devem ser observados.</p>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:12px;">
+              <p style="font-weight:600; color:#3c3c3c; margin:0;">Pronto! A sua prata Bemvirá está limpa!</p>
+              <span class="cuidados-tag">Prata 925</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
     <footer id="contato">
         <div class="footer-content">
